@@ -8,9 +8,12 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import net.lemonroot.witch.databinding.ActivityFirebaseUiactivityBinding
 import net.lemonroot.witch.databinding.ActivityMainBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -26,6 +29,26 @@ class MainActivity : AppCompatActivity() {
     private fun basicReadWrite(){
         // [START write_message]
         // Write a message to the database
+        val db = Firebase.firestore
+        val sdf = SimpleDateFormat("mm/dd/yyyy hh:mm:ss")
+        val currentDate = sdf.format(Date())
+        val user = hashMapOf(
+            "username" to "test",
+            "email" to "test@test.com",
+            "nickname" to "testman",
+            "joined" to currentDate
+        )
+
+        db.collection("users")
+            .add(user)
+            .addOnSuccessListener{documentReference ->
+                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener{e ->
+                Log.w(TAG, "Error adding document", e)
+            }
+
+        /*
         val database = Firebase.database
         val myRef = database.getReference("message")
 
@@ -47,6 +70,6 @@ class MainActivity : AppCompatActivity() {
                 Log.w(TAG, "Failed to read value.", error.toException())
             }
         })
-        // [END read_message]
+        // [END read_message]*/
     }
 }

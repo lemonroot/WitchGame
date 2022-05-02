@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WitchGame</string>
+    <string name="sign_out_text">Sign Out</string>
+    <string name="read_write_text">Test me!</string>
 </resources>

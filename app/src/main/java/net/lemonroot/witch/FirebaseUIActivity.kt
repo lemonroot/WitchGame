@@ -1,16 +1,25 @@
 package net.lemonroot.witch
 
+import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
+import com.google.firebase.FirebaseApp
+import com.google.firebase.appcheck.FirebaseAppCheck
+import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import net.lemonroot.witch.databinding.ActivityFirebaseUiactivityBinding
 import java.security.Provider
+import java.text.SimpleDateFormat
+import java.util.*
 
 class FirebaseUIActivity : AppCompatActivity() {
     lateinit var binding: ActivityFirebaseUiactivityBinding
@@ -23,8 +32,32 @@ class FirebaseUIActivity : AppCompatActivity() {
 
     final val AUTH_REQUEST_CODE = 7001 // Any number
     lateinit var firebaseAuth:FirebaseAuth
-    lateinit var listener:FirebaseAuth.AuthStateListener
-    lateinit var providers:List<AuthUI.IdpConfig>
+    private lateinit var listener:FirebaseAuth.AuthStateListener
+    private lateinit var providers:List<AuthUI.IdpConfig>
+
+    private fun basicReadWrite() {
+        // [START write_message]
+        // Write a message to the database
+        val db = Firebase.firestore
+        val sdf = SimpleDateFormat("M/dd/yyyy hh:mm:ss")
+        val currentDate = sdf.format(Date())
+        val nickname = "testman"
+        val email = "email@email.email2"
+        val user = hashMapOf(
+            "email" to email,
+            "nickname" to nickname,
+            "joined" to currentDate
+        )
+
+        db.collection("users").document(nickname)
+            .set(user)
+            .addOnSuccessListener {
+                Log.d(ContentValues.TAG, "DocumentSnapshot added successfully!")
+            }
+            .addOnFailureListener { e ->
+                Log.w(ContentValues.TAG, "Error adding document", e)
+            }
+    }
 
     override fun onStart(){
         super.onStart()
@@ -42,16 +75,14 @@ class FirebaseUIActivity : AppCompatActivity() {
         binding = ActivityFirebaseUiactivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.signoutBtn.setOnClickListener(){
-            // [START auth_fui_signout]
-            AuthUI.getInstance()
-                .signOut(this)
-                .addOnCompleteListener {
-                    // ...
-                }
-            Toast.makeText(this@FirebaseUIActivity, "done", Toast.LENGTH_SHORT).show()
-            // [END auth_fui_signout]
-        }
+        FirebaseApp.initializeApp(/*context=*/this)
+        val firebaseAppCheck = FirebaseAppCheck.getInstance()
+        firebaseAppCheck.installAppCheckProviderFactory(
+            SafetyNetAppCheckProviderFactory.getInstance()
+        )
+
+        binding.signoutBtn.setOnClickListener(){signOut()}
+        binding.readwriteButton.setOnClickListener(){basicReadWrite()}
         init()
     }
 
@@ -77,20 +108,6 @@ class FirebaseUIActivity : AppCompatActivity() {
         }
     }
 
-    private fun createSignInIntent() {
-        // [START auth_fui_create_intent]
-        // Choose authentication providers
-
-
-        // Create and launch sign-in intent
-        val signInIntent = AuthUI.getInstance()
-            .createSignInIntentBuilder()
-            .setAvailableProviders(providers)
-            .build()
-        signInLauncher.launch(signInIntent)
-        // [END auth_fui_create_intent]
-    }
-
     // [START auth_fui_result]
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
         val response = result.idpResponse
@@ -108,7 +125,14 @@ class FirebaseUIActivity : AppCompatActivity() {
     // [END auth_fui_result]
 
     private fun signOut() {
-
+    // [START auth_fui_signout]
+            AuthUI.getInstance()
+                .signOut(this)
+                .addOnCompleteListener {
+                    // ...
+                }
+            Toast.makeText(this@FirebaseUIActivity, "done", Toast.LENGTH_SHORT).show()
+    // [END auth_fui_signout]
     }
 
     private fun delete() {
