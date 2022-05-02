@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Player Currency menu -->
+    <item
+        android:id="@+id/icon_currency"
+        android:icon="@drawable/ic_currency_placeholder"
+        android:title="@string/action_currency"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/icon_bag"
+        android:icon="@drawable/ic_bag_personal"
+        android:title="@string/action_bag"
+        app:showAsAction="ifRoom" />
+
+    <!-- Settings menu -->
+    <item
+        android:id="@+id/icon_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+</menu>
