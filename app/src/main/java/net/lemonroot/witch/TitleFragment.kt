@@ -16,13 +16,16 @@ import net.lemonroot.witch.databinding.FragmentTitleBinding
  * create an instance of this fragment.
  */
 class TitleFragment : Fragment() {
-    private lateinit var binding: FragmentTitleBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentTitleBinding>(
+        var binding = DataBindingUtil.inflate<FragmentTitleBinding>(
             inflater, R.layout.fragment_title, container, false)
+
+        binding.btnStart.setOnClickListener {v: View ->
+            v.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToHomeFragment())
+        }
 
         return binding.root
     }

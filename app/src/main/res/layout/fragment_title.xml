@@ -9,7 +9,9 @@
             name="title"
             type="net.lemonroot.witch.TitleFragment" />
     </data>
+
     <ScrollView
+        android:id="@+id/titleScroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
