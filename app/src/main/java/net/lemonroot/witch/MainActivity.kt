@@ -21,55 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.readWriteTest.setOnClickListener(){
-            basicReadWrite()
-        }
-    }
-
-    private fun basicReadWrite(){
-        // [START write_message]
-        // Write a message to the database
-        val db = Firebase.firestore
-        val sdf = SimpleDateFormat("mm/dd/yyyy hh:mm:ss")
-        val currentDate = sdf.format(Date())
-        val user = hashMapOf(
-            "username" to "test",
-            "email" to "test@test.com",
-            "nickname" to "testman",
-            "joined" to currentDate
-        )
-
-        db.collection("users")
-            .add(user)
-            .addOnSuccessListener{documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener{e ->
-                Log.w(TAG, "Error adding document", e)
-            }
-
-        /*
-        val database = Firebase.database
-        val myRef = database.getReference("message")
-
-        myRef.setValue("Hello, World!")
-        // [END write_message]
-
-        // [START read_message]
-        // Read from the database
-        myRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                val value = dataSnapshot.value
-                Log.d(TAG, "Value is: $value")
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException())
-            }
-        })
-        // [END read_message]*/
+        //binding.readWriteTest.setOnClickListener(){
+            //basicReadWrite()
+        //}
     }
 }

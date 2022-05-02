@@ -1,5 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    ext {
+        navigationVersion = "2.4.2"
+    }
     repositories {
         // Check that you have the following line (if not, add it):
         google()  // Google's Maven repository
@@ -7,6 +10,7 @@ buildscript {
     dependencies {
         // Add this line
         classpath 'com.google.gms:google-services:4.3.10'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
     }
 }
 
