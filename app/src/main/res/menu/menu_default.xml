@@ -6,5 +6,7 @@
         android:icon="@drawable/ic_settings"
         android:title="@string/settings_label"
         app:showAsAction="ifRoom"/>
-    <item android:title="Test" />
+    <item
+        android:id="@+id/menu_link_account"
+        android:title="@string/link_account" />
 </menu>

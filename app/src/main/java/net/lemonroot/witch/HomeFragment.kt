@@ -39,8 +39,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.myToolbar.inflateMenu(R.menu.menu)
-
+        // Clear toolbar before populating it
+        binding.myToolbar.menu.clear()
+        // Inflate toolbar
+        binding.myToolbar.inflateMenu(R.menu.menu_default)
+        // Logic for various
         binding.myToolbar.setOnMenuItemClickListener {
             when(it.itemId){
                 R.id.action_settings -> {

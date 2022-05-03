@@ -67,9 +67,9 @@ class TitleFragment : Fragment() {
             }
     }
 /*
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu, menu)
+    override fun onCreateOptionsMenu(menu_Normal: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu_Normal, inflater)
+        inflater.inflate(R.menu_Normal.menu_Normal, menu_Normal)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

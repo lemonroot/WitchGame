@@ -45,6 +45,7 @@ class TestsActivity : AppCompatActivity() {
             }
     }
 
+
     // Get anonymous user info
     /*
     private fun fetchInfo() {

@@ -6,12 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
-import net.lemonroot.witch.databinding.FragmentHomeBinding
 import net.lemonroot.witch.databinding.FragmentSettingsBinding
-import net.lemonroot.witch.databinding.FragmentTitleBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -37,7 +33,7 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.myToolbar.inflateMenu(R.menu.menu)
+        binding.myToolbar.inflateMenu(R.menu.menu_default)
 
         binding.myToolbar.setOnMenuItemClickListener {
             when(it.itemId){
