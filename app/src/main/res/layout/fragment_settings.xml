@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="net.lemonroot.witch.HomeFragment">
+    tools:context="net.lemonroot.witch.SettingsFragment">
 
     <data>
         <variable
             name="home"
-            type="net.lemonroot.witch.HomeFragment" />
+            type="net.lemonroot.witch.SettingsFragment" />
     </data>
 
     <ScrollView
@@ -37,7 +37,7 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test_text"
+                android:text="Settings test"
                 android:textSize="34sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
