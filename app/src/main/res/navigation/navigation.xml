@@ -23,4 +23,8 @@
         android:name="net.lemonroot.witch.HomeFragment"
         android:label="@string/label_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="net.lemonroot.witch.SettingsFragment"
+        android:label="@string/settings_label" />
 </navigation>
