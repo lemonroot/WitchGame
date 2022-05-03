@@ -1,16 +1,15 @@
 package net.lemonroot.witch
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil.setContentView
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
+import com.google.firebase.auth.FirebaseAuth
 import net.lemonroot.witch.databinding.FragmentHomeBinding
-import net.lemonroot.witch.databinding.FragmentTitleBinding
+
 
 /**
  * A simple [Fragment] subclass.
@@ -31,6 +30,10 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentHomeBinding>(
             inflater, R.layout.fragment_home, container, false)
+
+        binding.btnFetch.setOnClickListener { v: View ->
+            fetchInfo()
+        }
         return binding.root
     }
 
@@ -47,5 +50,13 @@ class HomeFragment : Fragment() {
                 } else -> false
             }
         }
+    }
+
+    private fun fetchInfo() {
+        val userRecord: String = FirebaseAuth.getInstance().currentUser!!.uid
+// See the UserRecord reference doc for the contents of userRecord.
+// See the UserRecord reference doc for the contents of userRecord.
+        System.out.println("Successfully fetched user data: $userRecord")
+
     }
 }

@@ -4,6 +4,7 @@ import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import net.lemonroot.witch.databinding.ActivityMainBinding
@@ -43,4 +44,12 @@ class TestsActivity : AppCompatActivity() {
                 Log.w(ContentValues.TAG, "Error adding document", e)
             }
     }
+
+    // Get anonymous user info
+    /*
+    private fun fetchInfo() {
+        val userRecord: String = FirebaseAuth.getInstance().currentUser!!.uid
+    // See the UserRecord reference doc for the contents of userRecord.
+        System.out.println("Successfully fetched user data: $userRecord")
+    } */
 }
