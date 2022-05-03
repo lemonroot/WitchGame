@@ -21,7 +21,6 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="net.lemonroot.witch.HomeFragment"
-        android:label="@string/label_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/settingsFragment"

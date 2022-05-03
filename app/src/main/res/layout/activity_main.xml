@@ -11,6 +11,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <!-- Fragment container, do not edit -->
             <fragment
                 android:id="@+id/myNavHostFragment"
                 android:name="androidx.navigation.fragment.NavHostFragment"
@@ -19,11 +21,7 @@
                 app:defaultNavHost="true"
                 app:navGraph="@navigation/navigation"
                 tools:ignore="FragmentTagUsage" />
-        </LinearLayout> <!--
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start" /> -->
+
+        </LinearLayout>
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

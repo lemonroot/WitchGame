@@ -90,7 +90,8 @@ class FirebaseUIActivity : AppCompatActivity() {
         providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build(),
             AuthUI.IdpConfig.GoogleBuilder().build(),
-            AuthUI.IdpConfig.PhoneBuilder().build()
+            AuthUI.IdpConfig.PhoneBuilder().build(),
+            AuthUI.IdpConfig.AnonymousBuilder().build()
         )
 
         firebaseAuth = FirebaseAuth.getInstance()

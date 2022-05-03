@@ -4,10 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import net.lemonroot.witch.databinding.FragmentHomeBinding
 
 
@@ -34,32 +41,29 @@ class HomeFragment : Fragment() {
         binding.btnFetch.setOnClickListener { v: View ->
             fetchInfo()
         }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // Clear toolbar before populating it
-        binding.myToolbar.menu.clear()
-        // Inflate toolbar
-        binding.myToolbar.inflateMenu(R.menu.menu_default)
-        // Logic for various
-        binding.myToolbar.setOnMenuItemClickListener {
-            when(it.itemId){
-                R.id.action_settings -> {
-                    val navController = Navigation.findNavController(view)
-                    navController.navigate(R.id.settingsFragment)
-                    true
-                } else -> false
-            }
-        }
+
+        populateAppBar()
+    }
+
+    private fun populateAppBar() {
+        // Create app bar
+        val navController = findNavController()
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        // Bind app bar
+        binding.myToolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
     private fun fetchInfo() {
-        val userRecord: String = FirebaseAuth.getInstance().currentUser!!.uid
-// See the UserRecord reference doc for the contents of userRecord.
-// See the UserRecord reference doc for the contents of userRecord.
-        System.out.println("Successfully fetched user data: $userRecord")
+        val user = Firebase.auth.currentUser!!.uid
+        // See the UserRecord reference doc for the contents of userRecord.
+        println("Successfully fetched user data: $user")
 
     }
 }

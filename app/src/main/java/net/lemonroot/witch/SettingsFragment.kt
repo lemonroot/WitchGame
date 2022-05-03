@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import net.lemonroot.witch.databinding.FragmentSettingsBinding
 
 /**
@@ -33,16 +36,15 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.myToolbar.inflateMenu(R.menu.menu_default)
+        populateAppBar()
+    }
 
-        binding.myToolbar.setOnMenuItemClickListener {
-            when(it.itemId){
-                R.id.action_settings -> {
-                    val navController = Navigation.findNavController(view)
-                    navController.navigate(R.id.settingsFragment)
-                    true
-                } else -> false
-            }
-        }
+    private fun populateAppBar() {
+        // Create app bar
+        val navController = findNavController()
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        // Bind app bar
+        binding.myToolbar.setupWithNavController(navController, appBarConfiguration)
     }
 }
