@@ -16,6 +16,9 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/titleFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_titleFragment_to_authentication"
+            app:destination="@id/authentication" />
     </fragment>
 
     <fragment
@@ -27,4 +30,8 @@
         android:name="net.lemonroot.witch.SettingsFragment"
         android:label="@string/settings_label"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/authentication"
+        android:name="net.lemonroot.witch.Authentication"
+        android:label="Authentication" />
 </navigation>

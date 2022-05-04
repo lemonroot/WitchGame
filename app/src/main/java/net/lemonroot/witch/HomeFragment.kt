@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -12,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -38,8 +40,8 @@ class HomeFragment : Fragment() {
         binding = DataBindingUtil.inflate<FragmentHomeBinding>(
             inflater, R.layout.fragment_home, container, false)
 
-        binding.btnFetch.setOnClickListener { v: View ->
-            fetchInfo()
+        binding.btnSignout.setOnClickListener { v: View ->
+            signOut()
         }
 
         return binding.root
@@ -60,10 +62,14 @@ class HomeFragment : Fragment() {
         binding.myToolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
-    private fun fetchInfo() {
-        val user = Firebase.auth.currentUser!!.uid
-        // See the UserRecord reference doc for the contents of userRecord.
-        println("Successfully fetched user data: $user")
-
+    private fun signOut() {
+        // [START auth_fui_signout]
+        AuthUI.getInstance()
+            .signOut(requireActivity())
+            .addOnCompleteListener {
+                // ...
+            }
+        Toast.makeText(activity, "Signed out.", Toast.LENGTH_SHORT).show()
+        // [END auth_fui_signout]
     }
 }
