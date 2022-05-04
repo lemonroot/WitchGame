@@ -86,27 +86,21 @@ class FirebaseUIActivity : AppCompatActivity() {
         init()
     }
 
-    private fun init(){
-        providers = arrayListOf(
+    private fun init() {
+        // [START auth_fui_create_intent]
+        // Choose authentication providers
+        val providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build(),
-            AuthUI.IdpConfig.GoogleBuilder().build(),
             AuthUI.IdpConfig.PhoneBuilder().build(),
-            AuthUI.IdpConfig.AnonymousBuilder().build()
-        )
+            AuthUI.IdpConfig.GoogleBuilder().build())
 
-        firebaseAuth = FirebaseAuth.getInstance()
-        listener = FirebaseAuth.AuthStateListener { p0 ->
-            val user = p0.currentUser
-            if(user != null){
-                Toast.makeText(this@FirebaseUIActivity, ""+user.uid, Toast.LENGTH_SHORT).show()
-            } else{
-                Toast.makeText(this@FirebaseUIActivity, "no", Toast.LENGTH_SHORT).show()
-                startActivityForResult(AuthUI.getInstance()
-                    .createSignInIntentBuilder()
-                    .setAvailableProviders(providers)
-                    .build(),AUTH_REQUEST_CODE)
-            }
-        }
+        // Create and launch sign-in intent
+        val signInIntent = AuthUI.getInstance()
+            .createSignInIntentBuilder()
+            .setAvailableProviders(providers)
+            .build()
+        signInLauncher.launch(signInIntent)
+        // [END auth_fui_create_intent]
     }
 
     // [START auth_fui_result]
