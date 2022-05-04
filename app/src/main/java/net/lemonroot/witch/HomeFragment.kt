@@ -9,6 +9,7 @@ import android.widget.Toast
 import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -27,6 +28,7 @@ import net.lemonroot.witch.databinding.FragmentHomeBinding
  */
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +45,7 @@ class HomeFragment : Fragment() {
         binding.btnSignout.setOnClickListener { v: View ->
             signOut()
         }
-
+        navController = findNavController()
         return binding.root
     }
 
@@ -55,7 +57,6 @@ class HomeFragment : Fragment() {
 
     private fun populateAppBar() {
         // Create app bar
-        val navController = findNavController()
         val appBarConfiguration = AppBarConfiguration(navController.graph)
 
         // Bind app bar
@@ -70,6 +71,8 @@ class HomeFragment : Fragment() {
                 // ...
             }
         Toast.makeText(activity, "Signed out.", Toast.LENGTH_SHORT).show()
+        navController = findNavController()
+        navController.navigate(R.id.titleFragment)
         // [END auth_fui_signout]
     }
 }
