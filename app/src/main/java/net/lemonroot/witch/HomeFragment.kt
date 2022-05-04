@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -46,21 +47,12 @@ class HomeFragment : Fragment() {
             signOut()
         }
         navController = findNavController()
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        populateAppBar()
-    }
-
-    private fun populateAppBar() {
-        // Create app bar
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-
-        // Bind app bar
-        binding.myToolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
     private fun signOut() {
@@ -71,7 +63,6 @@ class HomeFragment : Fragment() {
                 // ...
             }
         Toast.makeText(activity, "Signed out.", Toast.LENGTH_SHORT).show()
-        navController = findNavController()
         navController.navigate(R.id.titleFragment)
         // [END auth_fui_signout]
     }

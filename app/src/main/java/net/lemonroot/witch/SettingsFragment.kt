@@ -45,6 +45,6 @@ class SettingsFragment : Fragment() {
         val appBarConfiguration = AppBarConfiguration(navController.graph)
 
         // Bind app bar
-        binding.myToolbar.setupWithNavController(navController, appBarConfiguration)
+        binding.topToolbar.setupWithNavController(navController, appBarConfiguration)
     }
 }
