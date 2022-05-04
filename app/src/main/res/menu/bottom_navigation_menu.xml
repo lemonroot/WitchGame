@@ -4,5 +4,22 @@
         android:id="@+id/page_1"
         android:enabled="true"
         android:icon="@drawable/ic_home"
-        android:title="Home"/>
+        android:title="@string/home"
+        />
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:icon="@drawable/ic_egg"
+        android:title="@string/familiars"
+        />
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:icon="@drawable/ic_bag_personal"
+        android:title="@string/bag" />
+    <item
+        android:id="@+id/page_4"
+        android:enabled="true"
+        android:icon="@drawable/ic_mail"
+        android:title="@string/mail" />
 </menu>

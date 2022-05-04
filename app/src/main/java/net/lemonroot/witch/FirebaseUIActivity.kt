@@ -30,7 +30,7 @@ class FirebaseUIActivity : AppCompatActivity() {
         this.onSignInResult(res)
     }
 
-    final val AUTH_REQUEST_CODE = 7001 // Any number
+    val AUTH_REQUEST_CODE = 7001 // Any number
     lateinit var firebaseAuth:FirebaseAuth
     private lateinit var listener:FirebaseAuth.AuthStateListener
     private lateinit var providers:List<AuthUI.IdpConfig>
@@ -81,8 +81,8 @@ class FirebaseUIActivity : AppCompatActivity() {
             SafetyNetAppCheckProviderFactory.getInstance()
         )
 
-        binding.signoutBtn.setOnClickListener(){signOut()}
-        binding.readwriteButton.setOnClickListener(){basicReadWrite()}
+        binding.signoutBtn.setOnClickListener {signOut()}
+        binding.readwriteButton.setOnClickListener {basicReadWrite()}
         init()
     }
 

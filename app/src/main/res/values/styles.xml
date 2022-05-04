@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigation">
+        <item name="android:background">@color/md_theme_light_primaryContainer</item>
+        <item name="itemBackground">@color/md_theme_light_secondary</item>
+        <item name="itemIconTint">@color/md_theme_light_onSecondary</item>
+        <item name="itemTextColor">@color/md_theme_light_tertiary</item>
+    </style>
+</resources>
