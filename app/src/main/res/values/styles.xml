@@ -6,5 +6,23 @@
         <item name="itemIconTint">@color/md_theme_dark_onSurface</item>
         <item name="itemTextColor">@color/md_theme_dark_onSurface</item>
         <item name="itemActiveIndicatorStyle">@color/md_theme_dark_secondaryContainer</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+    <style name="TopBar" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorSurface">@color/md_theme_dark_onSurface</item>
+        <item name="colorOnSurface">@color/md_theme_dark_onSurface</item>
+        <item name="titleTextColor">@color/md_theme_dark_onSurface</item>
+        <item name="subtitleTextColor">@color/md_theme_dark_onSurface</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:statusBarColor">@color/md_theme_dark_primaryContainer</item>
+        <item name="menu">@color/md_theme_dark_onSurface</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Material3.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="toolbarStyle">@style/Widget.Material3.Toolbar</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/md_theme_dark_secondary</item>
     </style>
 </resources>

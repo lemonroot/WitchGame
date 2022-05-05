@@ -10,18 +10,7 @@
         android:id="@+id/titleFragment"
         android:name="net.lemonroot.witch.TitleFragment"
         android:label="Title"
-        tools:layout="@layout/fragment_title">
-        <action
-            android:id="@+id/action_titleFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/titleFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_titleFragment_to_authentication"
-            app:destination="@id/authentication"
-            app:popUpTo="@id/titleFragment"
-            app:popUpToInclusive="false" />
-    </fragment>
+        tools:layout="@layout/fragment_title"/>
 
     <fragment
         android:id="@+id/homeFragment"
@@ -31,12 +20,7 @@
         android:id="@+id/settingsFragment"
         android:name="net.lemonroot.witch.SettingsFragment"
         android:label="@string/settings_label"
-        tools:layout="@layout/fragment_settings" >
-        <action
-            android:id="@+id/action_settingsFragment_to_homeFragment2"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/authentication"
         android:name="net.lemonroot.witch.Authentication"

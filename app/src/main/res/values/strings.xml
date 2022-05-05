@@ -37,4 +37,6 @@
     <string name="profile_title">Profile</string>
     <string name="world_title">World</string>
     <string name="worldmap">World Map</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
 </resources>
