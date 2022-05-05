@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nemca/AndroidStudioProjects/WitchGame/app/src/main/res/drawable/bottom_nav_tab_background.xml" value="0.209" />
+        <entry key="..\:/Users/nemca/AndroidStudioProjects/WitchGame/app/src/main/res/drawable/bottom_tab_color.xml" value="0.209" />
         <entry key="..\:/Users/nemca/AndroidStudioProjects/WitchGame/app/src/main/res/layout/activity_firebase_uiactivity.xml" value="0.31354166666666666" />
         <entry key="..\:/Users/nemca/AndroidStudioProjects/WitchGame/app/src/main/res/layout/activity_firsebase_uiactivity.xml" value="0.31354166666666666" />
         <entry key="..\:/Users/nemca/AndroidStudioProjects/WitchGame/app/src/main/res/layout/activity_main.xml" value="0.31354166666666666" />

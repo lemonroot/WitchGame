@@ -53,10 +53,12 @@
             android:layout_height="wrap_content"
             android:state_checked="true"
             android:theme="@style/BottomNavigation"
-            app:labelVisibilityMode="labeled"
+            app:labelVisibilityMode="unlabeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:itemTextColor="@drawable/bottom_tab_color"
+            app:itemIconTint="@drawable/bottom_tab_color"
+            app:itemBackground="@drawable/bottom_nav_tab_background"
             app:menu="@menu/bottom_navigation_menu" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
