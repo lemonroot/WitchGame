@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.doOnPreDraw
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import kotlin.math.abs
 
 private const val DEFAULT_SCALE = 1f
@@ -20,9 +21,9 @@ private const val BASE_DURATION = 300L
 private const val VARIABLE_DURATION = 300L
 
 class BottomNavigationViewWithIndicator: BottomNavigationView,
-    BottomNavigationView.OnNavigationItemSelectedListener {
+    NavigationBarView.OnItemSelectedListener {
 
-    private var externalSelectedListener: OnNavigationItemSelectedListener? = null
+    private var externalSelectedListener: OnItemSelectedListener? = null
     private var animator: ValueAnimator? = null
 
     private val indicator = RectF()
@@ -39,7 +40,7 @@ class BottomNavigationViewWithIndicator: BottomNavigationView,
             : super(context, attrs, defStyleAttr)
 
     init {
-        super.setOnNavigationItemSelectedListener(this)
+        super.setOnItemSelectedListener(this)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -50,7 +51,7 @@ class BottomNavigationViewWithIndicator: BottomNavigationView,
         return false
     }
 
-    override fun setOnNavigationItemSelectedListener(listener: OnNavigationItemSelectedListener?) {
+    override fun setOnItemSelectedListener(listener: OnItemSelectedListener?) {
         externalSelectedListener = listener
     }
 

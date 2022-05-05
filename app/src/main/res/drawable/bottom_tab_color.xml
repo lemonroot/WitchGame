@@ -7,6 +7,6 @@
         android:state_checked="true"/>
 
     <item
-        android:color="@color/md_theme_dark_onSurfaceVariant"/>
+        android:color="@color/md_theme_dark_onSurface"/>
 
 </selector>

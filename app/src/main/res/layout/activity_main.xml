@@ -55,6 +55,7 @@
             android:minHeight="?actionBarSize"
             android:state_checked="true"
             android:theme="@style/BottomNavigation"
+            app:itemIconTint="@drawable/bottom_tab_color"
             app:labelVisibilityMode="unlabeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
