@@ -32,4 +32,9 @@
     <string name="home">Home</string>
     <string name="bag">Bag</string>
     <string name="mail">Mail</string>
+    <string name="header_title">Test</string>
+    <string name="header_text">Test2</string>
+    <string name="profile_title">Profile</string>
+    <string name="world_title">World</string>
+    <string name="worldmap">World Map</string>
 </resources>
