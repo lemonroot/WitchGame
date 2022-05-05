@@ -25,4 +25,8 @@
         <item name="spinBars">true</item>
         <item name="color">@color/md_theme_dark_secondary</item>
     </style>
+    <style name="ShapeAppearanceOverlay.Nav" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
 </resources>

@@ -1,21 +1,18 @@
 package net.lemonroot.witch
 
-import androidx.appcompat.app.AppCompatActivity
+import android.R.attr.radius
 import android.os.Bundle
-import android.view.Menu
-import android.widget.Toolbar
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.databinding.DataBindingUtil
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.MaterialShapeDrawable
 import net.lemonroot.witch.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -33,6 +30,12 @@ class MainActivity : AppCompatActivity() {
     // Setup navigation graph
     private fun navSetup() {
         var navigationView: NavigationView = binding.navView
+        val navViewBackground = navigationView.background as MaterialShapeDrawable
+        navViewBackground.shapeAppearanceModel = navViewBackground.shapeAppearanceModel
+            .toBuilder()
+            .setTopRightCorner(CornerFamily.ROUNDED, radius.toFloat())
+            .setBottomRightCorner(CornerFamily.ROUNDED, radius.toFloat())
+            .build()
 
         var navController: NavController =
             Navigation.findNavController(this, R.id.myNavHostFragment)
