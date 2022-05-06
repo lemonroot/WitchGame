@@ -1,23 +1,15 @@
 package net.lemonroot.witch
 
-import android.app.Activity.RESULT_OK
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.firebase.ui.auth.AuthUI
-import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
-import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
-import com.google.firebase.FirebaseApp
-import com.google.firebase.appcheck.FirebaseAppCheck
-import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import net.lemonroot.witch.databinding.FragmentAuthenticationBinding
 import net.lemonroot.witch.databinding.FragmentTitleBinding
 
 
@@ -52,10 +44,12 @@ class TitleFragment : Fragment() {
         val user = Firebase.auth.currentUser
         if (user != null) {
             Toast.makeText(activity, "Welcome back, " + user.uid, Toast.LENGTH_SHORT).show()
-            navController.navigate(R.id.homeFragment)
+
+            val switchActivityIntent = Intent(context, MainActivity::class.java)
+            startActivity(switchActivityIntent)
         } else {
             Toast.makeText(activity, "Please sign in.", Toast.LENGTH_SHORT).show()
-            navController.navigate(R.id.authentication)
+            navController.navigate(R.id.action_titleFragment_to_authentication)
         }
     }
 }

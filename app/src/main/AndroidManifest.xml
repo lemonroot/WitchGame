@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".TitleActivity"
+            android:exported="true" />
+        <activity
             android:name=".TestsActivity"
             android:exported="false" />
         <activity

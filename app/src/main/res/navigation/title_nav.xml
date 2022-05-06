@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title_nav"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="net.lemonroot.witch.TitleFragment"
+        android:label="TitleFragment" >
+        <action
+            android:id="@+id/action_titleFragment_to_authentication"
+            app:destination="@id/authentication"
+            app:popUpTo="@id/titleFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_navigation"
+            app:destination="@id/navigation"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/authentication"
+        android:name="net.lemonroot.witch.Authentication"
+        android:label="Authentication" >
+        <action
+            android:id="@+id/action_authentication_to_navigation"
+            app:destination="@id/navigation"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <include app:graph="@navigation/navigation" />
+</navigation>

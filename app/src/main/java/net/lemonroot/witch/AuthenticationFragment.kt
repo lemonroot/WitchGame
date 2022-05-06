@@ -1,6 +1,7 @@
 package net.lemonroot.witch
 
 import android.app.Activity.RESULT_OK
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
@@ -126,8 +127,8 @@ class Authentication : Fragment() {
     }
 
     private fun goHome() {
-        val navController = findNavController()
-        navController.navigate(R.id.action_authentication_to_homeFragment)
+        val switchActivityIntent = Intent(context, MainActivity::class.java)
+        startActivity(switchActivityIntent)
     }
     // [END auth_fui_result]
 }

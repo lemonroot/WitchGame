@@ -1,5 +1,6 @@
 package net.lemonroot.witch
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -55,7 +56,8 @@ class HomeFragment : Fragment() {
                 // ...
             }
         Toast.makeText(activity, "Signed out.", Toast.LENGTH_SHORT).show()
-        navController.navigate(R.id.titleFragment)
+        val switchActivityIntent = Intent(context, TitleActivity::class.java)
+        startActivity(switchActivityIntent)
         // [END auth_fui_signout]
     }
 }

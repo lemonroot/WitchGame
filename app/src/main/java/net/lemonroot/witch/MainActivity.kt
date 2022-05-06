@@ -20,11 +20,25 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        println("firing main activity")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         barSetup()
         navSetup()
+    }
+
+    // Setup toolbar & navigation drawer
+    private fun barSetup() {
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        var drawer: DrawerLayout = binding.drawerLayout
+        mAppBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.titleFragment, R.id.homeFragment
+            ),
+            binding.drawerLayout
+        )
     }
 
     // Setup navigation graph
@@ -41,19 +55,6 @@ class MainActivity : AppCompatActivity() {
             Navigation.findNavController(this, R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration)
         NavigationUI.setupWithNavController(navigationView, navController)
-    }
-
-    // Setup toolbar & navigation drawer
-    private fun barSetup() {
-        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        var drawer: DrawerLayout = binding.drawerLayout
-        mAppBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.titleFragment, R.id.homeFragment
-            ),
-            binding.drawerLayout
-        )
     }
 
     override fun onSupportNavigateUp(): Boolean {
