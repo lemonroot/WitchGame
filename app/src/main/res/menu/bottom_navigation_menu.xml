@@ -9,13 +9,13 @@
     <item
         android:id="@+id/page_2"
         android:enabled="true"
-        android:icon="@drawable/ic_egg"
+        android:icon="@drawable/ic_cat"
         android:title="@string/familiars"
         />
     <item
         android:id="@+id/page_3"
         android:enabled="true"
-        android:icon="@drawable/ic_bag_personal"
+        android:icon="@drawable/ic_sack"
         android:title="@string/bag" />
     <item
         android:id="@+id/page_4"

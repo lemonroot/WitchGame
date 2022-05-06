@@ -2,13 +2,19 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/profile_item"
-        android:title="@string/profile_title">
+        android:id="@+id/app_item"
+        android:title="@string/app_title">
         <menu>
             <item
                 android:id="@+id/home_item"
                 android:title="@string/home"
                 android:icon="@drawable/ic_home"
+                android:checkable="true"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/news_item"
+                android:title="@string/news"
+                android:icon="@drawable/ic_newspaper_variant"
                 android:checkable="true"
                 app:showAsAction="ifRoom" />
             <item
@@ -20,13 +26,83 @@
         </menu>
     </item>
     <item
+        android:id="@+id/mywitch_title"
+        android:title="@string/mywitch_title">
+        <menu>
+            <item
+                android:id="@+id/profile_item"
+                android:title="@string/profile"
+                android:icon="@drawable/ic_profile"/>
+            <item
+                android:id="@+id/familiars_item"
+                android:title="@string/familiars"
+                android:icon="@drawable/ic_cat"/>
+            <item
+                android:id="@+id/inventory_item"
+                android:title="@string/bag"
+                android:icon="@drawable/ic_bag_personal"/>
+            <item
+                android:id="@+id/spellbook_item"
+                android:title="@string/spellbook"
+                android:icon="@drawable/ic_spellbook"/>
+        </menu>
+    </item>
+    <item
         android:id="@+id/world_item"
         android:title="@string/world_title">
         <menu>
             <item
                 android:id="@+id/worldmap_item"
                 android:title="@string/worldmap"
+                android:icon="@drawable/ic_planet"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/guild_item"
+                android:title="@string/guilds"
+                android:icon="@drawable/ic_wizard_hat"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/battle_item"
+                android:title="@string/arena"
+                android:icon="@drawable/ic_stadium"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/event_item"
+                android:title="@string/event"
+                android:icon="@drawable/ic_balloon"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/community_item"
+        android:title="@string/community">
+        <menu>
+            <item
+                android:id="@+id/community_hall_item"
+                android:title="@string/community_hall"
+                android:icon="@drawable/ic_round_roofing_24"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/friends_item"
+                android:title="@string/friends"
                 android:icon="@drawable/ic_placeholder"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/mail_item"
+                android:title="@string/mail"
+                android:icon="@drawable/ic_mail"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/discord_item"
+                android:title="@string/discord"
+                android:icon="@drawable/ic_discord"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
         </menu>

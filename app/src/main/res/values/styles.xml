@@ -6,7 +6,6 @@
         <item name="itemIconTint">@color/md_theme_dark_onSurface</item>
         <item name="itemTextColor">@color/md_theme_dark_onSurface</item>
         <item name="itemActiveIndicatorStyle">@color/md_theme_dark_secondaryContainer</item>
-        <item name="android:elevation">4dp</item>
     </style>
     <style name="TopBar" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorSurface">@color/md_theme_dark_onSurface</item>

@@ -39,4 +39,16 @@
     <string name="worldmap">World Map</string>
     <string name="navigation_drawer_open">open</string>
     <string name="navigation_drawer_close">close</string>
+    <string name="news">News</string>
+    <string name="community">Community</string>
+    <string name="app_title">App</string>
+    <string name="profile">Profile</string>
+    <string name="mywitch_title">My Witch</string>
+    <string name="guilds">Guilds</string>
+    <string name="community_hall">Community Hall</string>
+    <string name="friends">Friends</string>
+    <string name="spellbook">Spellbook</string>
+    <string name="discord">Discord</string>
+    <string name="event">Event</string>
+    <string name="arena">Arena</string>
 </resources>
