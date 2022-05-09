@@ -1,13 +1,11 @@
-package net.lemonroot.witch
+package net.lemonroot.witch.activities
 
 import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import net.lemonroot.witch.databinding.ActivityMainBinding
 import net.lemonroot.witch.databinding.ActivityTestsBinding
 import java.text.SimpleDateFormat
 import java.util.*

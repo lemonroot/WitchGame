@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".TitleActivity"
+            android:name=".activities.TitleActivity"
             android:exported="true" />
         <activity
-            android:name=".TestsActivity"
+            android:name=".activities.TestsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

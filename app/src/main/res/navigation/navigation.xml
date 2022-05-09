@@ -8,11 +8,16 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="net.lemonroot.witch.HomeFragment"
+        android:name="net.lemonroot.witch.home.HomeFragment"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="net.lemonroot.witch.SettingsFragment"
+        android:name="net.lemonroot.witch.client.SettingsFragment"
         android:label="@string/settings_label"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/profileTempFragment"
+        android:name="net.lemonroot.witch.profile.ProfileTempFragment"
+        android:label="fragment_profile_temp"
+        tools:layout="@layout/fragment_profile_temp" />
 </navigation>

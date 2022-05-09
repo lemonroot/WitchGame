@@ -26,25 +26,34 @@
         </menu>
     </item>
     <item
-        android:id="@+id/mywitch_title"
-        android:title="@string/mywitch_title">
+        android:id="@+id/game_title"
+        android:title="@string/game_title">
         <menu>
             <item
                 android:id="@+id/profile_item"
                 android:title="@string/profile"
-                android:icon="@drawable/ic_profile"/>
+                android:icon="@drawable/ic_profile"
+                app:showAsAction="ifRoom"/>
             <item
                 android:id="@+id/familiars_item"
                 android:title="@string/familiars"
-                android:icon="@drawable/ic_cat"/>
+                android:icon="@drawable/ic_cat"
+                app:showAsAction="ifRoom"/>
             <item
                 android:id="@+id/inventory_item"
                 android:title="@string/bag"
-                android:icon="@drawable/ic_bag_personal"/>
+                android:icon="@drawable/ic_bag_personal"
+                app:showAsAction="ifRoom"/>
             <item
                 android:id="@+id/spellbook_item"
                 android:title="@string/spellbook"
-                android:icon="@drawable/ic_spellbook"/>
+                android:icon="@drawable/ic_spellbook"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/coven_item"
+                android:title="@string/coven"
+                android:icon="@drawable/ic_weather_night"
+                app:showAsAction="ifRoom"/>
         </menu>
     </item>
     <item
@@ -55,6 +64,12 @@
                 android:id="@+id/worldmap_item"
                 android:title="@string/worldmap"
                 android:icon="@drawable/ic_planet"
+                android:checkable="true"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/story_item"
+                android:title="@string/story"
+                android:icon="@drawable/ic_placeholder"
                 android:checkable="true"
                 app:showAsAction="ifRoom"/>
             <item
@@ -74,7 +89,7 @@
                 android:title="@string/event"
                 android:icon="@drawable/ic_balloon"
                 android:checkable="true"
-                app:showAsAction="ifRoom"/>
+                app:showAsAction="never"/>
         </menu>
     </item>
     <item

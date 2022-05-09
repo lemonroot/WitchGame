@@ -1,12 +1,9 @@
-package net.lemonroot.witch
+package net.lemonroot.witch.activities
 
-import android.R
-import android.app.Activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.ui.setupActionBarWithNavController
 import net.lemonroot.witch.databinding.ActivityTitleBinding
 
 

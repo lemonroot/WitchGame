@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="net.lemonroot.witch.HomeFragment">
+    tools:context="net.lemonroot.witch.home.HomeFragment">
 
     <data>
         <variable
             name="home"
-            type="net.lemonroot.witch.HomeFragment" />
+            type="net.lemonroot.witch.home.HomeFragment" />
     </data>
 
     <ScrollView

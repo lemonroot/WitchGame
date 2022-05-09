@@ -1,6 +1,5 @@
-package net.lemonroot.witch
+package net.lemonroot.witch.title
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -10,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import net.lemonroot.witch.activities.MainActivity
+import net.lemonroot.witch.R
 import net.lemonroot.witch.databinding.FragmentTitleBinding
 
 

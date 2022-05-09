@@ -1,9 +1,9 @@
-package net.lemonroot.witch
+package net.lemonroot.witch.activities
 
 import android.R.attr.radius
 import android.os.Bundle
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,6 +11,7 @@ import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
+import net.lemonroot.witch.R
 import net.lemonroot.witch.databinding.ActivityMainBinding
 
 
@@ -32,7 +33,6 @@ class MainActivity : AppCompatActivity() {
     private fun barSetup() {
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        var drawer: DrawerLayout = binding.drawerLayout
         mAppBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.titleFragment, R.id.homeFragment
@@ -57,8 +57,17 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(navigationView, navController)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the top action bar
+        menuInflater.inflate(R.menu.top_bar_menu, menu)
+        return true
+    }
+
     override fun onSupportNavigateUp(): Boolean {
-        var navController: NavController = Navigation.findNavController(this, R.id.myNavHostFragment)
+        // Supports up button
+        var navController: NavController = Navigation.findNavController(this,
+            R.id.myNavHostFragment
+        )
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp()
     }

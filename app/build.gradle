@@ -7,21 +7,20 @@ plugins {
 
 android {
     compileSdk 32
-    buildFeatures {
-        viewBinding true
-        dataBinding true
-    }
     defaultConfig {
         applicationId "net.lemonroot.witch"
-        minSdk 21
         targetSdk 32
+        minSdk 21
         versionCode 1
         versionName "1.0"
         resConfigs "en" // And any other languages you support
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+        compose true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -34,6 +33,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        useIR = true
+    }
+    composeOptions{
+        kotlinCompilerExtensionVersion = "1.2.0-alpha08"
     }
 }
 
@@ -45,7 +48,7 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.preference:preference:1.2.0'
     testImplementation 'junit:junit:4.13.2'
@@ -73,7 +76,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
 
     // Firebase Safetynet
-    implementation 'com.google.firebase:firebase-appcheck-safetynet:16.0.0-beta06'
+    implementation 'com.google.firebase:firebase-appcheck-safetynet:16.0.0'
 
     // Kotlin Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
@@ -89,5 +92,19 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.0'
 
     implementation('androidx.drawerlayout:drawerlayout:1.1.1')
+
+    // Compose dependencies
+    // Integration with activities
+    implementation 'androidx.activity:activity-compose:1.4.0'
+    // Compose Material Design
+    implementation 'androidx.compose.material:material:1.1.1'
+    // Animations
+    implementation 'androidx.compose.animation:animation:1.1.1'
+    // Tooling support (Previews, etc.)
+    implementation 'androidx.compose.ui:ui-tooling:1.1.1'
+    // Integration with ViewModels
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1'
+    // UI Tests
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.1.1'
 
 }

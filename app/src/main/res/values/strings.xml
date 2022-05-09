@@ -51,4 +51,10 @@
     <string name="discord">Discord</string>
     <string name="event">Event</string>
     <string name="arena">Arena</string>
+    <string name="coven">Coven</string>
+    <string name="game_title">Game</string>
+    <string name="story">Story</string>
+    <string name="name_label">Nickname</string>
+    <string name="name_error">ERROR: Invalid nickname.</string>
+    <string name="birthday_label">Birthday</string>
 </resources>

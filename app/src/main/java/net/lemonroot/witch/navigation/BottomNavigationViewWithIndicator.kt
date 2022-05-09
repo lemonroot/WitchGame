@@ -1,4 +1,4 @@
-package net.lemonroot.witch
+package net.lemonroot.witch.navigation
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -13,6 +13,7 @@ import androidx.core.view.doOnPreDraw
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
+import net.lemonroot.witch.R
 import kotlin.math.abs
 
 private const val DEFAULT_SCALE = 1f
